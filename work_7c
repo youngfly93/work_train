@@ -1,0 +1,24 @@
+#include <string.h>
+#include <stdio.h>
+
+int diff(int a ,int b)
+{
+    int sum = a^b;
+    int count = 0;
+    while(sum)
+    {
+        sum =sum&(sum-1);
+        count++;
+    }
+    return count;
+}
+
+
+int main()
+{
+    int a = 10;
+    int b = 20;
+    int ret = diff(a,b);
+    printf("%d\n",ret);
+    return 0;
+}
